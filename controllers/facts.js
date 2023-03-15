@@ -5,7 +5,7 @@ const getAllFacts = async (req, res) => {
   try {
     const facts = await Fact.find();
 
-    if (!facts) {
+    if (!facts.length) {
       return res.status(400).json({ error: "No facts found" });
     }
 
